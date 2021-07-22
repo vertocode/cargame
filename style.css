@@ -1,0 +1,51 @@
+body{
+    background-color: rgb(28, 161, 250);
+    text-align: center;
+}
+#game{
+    right:auto;
+    background-image: url(rua-vazia.jpeg);
+    border-radius: red;
+    height: 445px;
+    width: 780px;
+    border-style:dashed;
+}
+
+#carro{
+    position: relative;
+    top: 250px;
+    height: 150px;
+}
+#controle{
+    display: flex;
+    text-align: center;
+    
+}
+#acelerar{
+    margin-left: 100px;
+    position: relative;
+    width: 70px;
+    height: 30px;
+}
+#volante{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+#volantep{
+    color: white;
+}
+input{
+    cursor: pointer;
+}
+#direita{
+    cursor: pointer;
+}
+#esquerda{
+    cursor: pointer;
+    color: black;
+}
+#vertocode{
+   font-size: 30px;
+   float: left;
+}
+

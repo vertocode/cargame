@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="car.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Car Game</title>
+</head>
+<body>
+    <div id="game">
+            <p><img id="carro" src="carro.png" alt="carro"></p>
+    </div>
+    
+            <div id="controle">
+                <div>
+                    <input type="button" value="Ligar/Desligar" onclick="botaoligadesliga()">
+                <p id="liga">Status do Carro: Desligado</p>
+                </div>
+                
+                <div >
+                    <input id="acelerar" type="number"> Km/h
+                    <input type="button" value="Acelerar"onclick="acelerou()">
+                    <input type="button" value="Frear" onclick="freio()">
+                    <p id="acelera">Velocidade: 0km/h</p>
+                </div>
+                <div id="volante">
+                    <img id="esquerda" src="esquerda.png" alt="esquerda" width="80px" onclick="esquerda()">
+                    <img id="direita" src="right.png" alt="direita" width="80px" onclick="direita()">
+                </div>
+            </div>
+            <code>
+                <p id="vertocode"> &reg;vertocode</p>
+            </code>
+            
+            
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
