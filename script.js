@@ -5,6 +5,8 @@ var rotacaodovolante = 0
 function ligardesligar(){
     if(statuscarro == `Desligado`){
         statuscarro = `Ligado`
+        var audio = new Audio(`carroligando.mp3`)
+        audio.play()
     }
     else{
         statuscarro = `Desligado`
@@ -13,6 +15,11 @@ function ligardesligar(){
 }
 function acelerar(incremento){
     aceleracao = aceleracao + Number(incremento)
+    if(aceleracao > 1)
+        
+        var audio = new Audio("carroligadoparado.wav")
+        audio.play()
+  
     return aceleracao
 }
 function frear(decremento){
@@ -29,9 +36,14 @@ function girodovolante(volante){
 }
 
 function botaoligadesliga(){
-    ligardesligar()
+    if(aceleracao == 0){
+       ligardesligar()
     var ligar = document.getElementById(`liga`)
-    ligar.innerHTML = `Status do Carro: ` + statuscarro
+    ligar.innerHTML = `Status do Carro: ` + statuscarro 
+    }else{
+        alert(`pare o carro para desliga-lo`)
+    }
+    
 }
 function andar(carro){
     andando =  carro.style.marginLeft += `20px`
@@ -46,7 +58,7 @@ function acelerou(){
     let km = document.getElementById(`acelerar`)
     let res = document.getElementById(`acelera`)
     if(aceleracao < 210 && km.value > 0 && km.value <= 20){
-        
+    
          res.innerHTML = `Acelerando ${km.value} Km/h</br>`
          res.innerHTML += `Velocidade: ${acelerar(km.value)} Km/h`
     }else if(km.value <= 0){
@@ -88,7 +100,9 @@ function freio(){
 function direita(carro){
     if(statuscarro == `Ligado`&& aceleracao >= 1){
     let carro = document.getElementById("carro")
+    let nick = document.getElementById("nickname")
     carro.style.marginLeft = `${girodovolante(10)}px`
+    nick.style.marginLeft = `${girodovolante(10)}px`
     }
     else if (statuscarro == `Desligado`) {
         alert("Ligue o carro para virar o volante do carro")
@@ -99,7 +113,9 @@ function direita(carro){
 function esquerda(carro){
     if(statuscarro == `Ligado` && aceleracao >= 1){
     let carro = document.getElementById("carro")
+    let nick = document.getElementById("nickname")
     carro.style.marginLeft = `${girodovolante(-10)}px`
+    nick.style.marginLeft = `${girodovolante(-10)}px`
     
     }else if (statuscarro == `Desligado`) {
         alert("Ligue o carro para virar o volante do carro")
@@ -107,4 +123,36 @@ function esquerda(carro){
         alert(`Acelere o carro para mover o veículo`)
     }
 }
+document.addEventListener("keypress", function(a){
+    if(a.key === `a`){
+        esquerda()
+    }
+})
+document.addEventListener("keypress", function(d){
+    if(d.key === `d`){
+        direita()
+    }
+})
+document.addEventListener("keypress", function(w){
+    if(w.key === `w`){
+        let km = document.getElementById(`acelerar`)
+        km.value = 10
+        acelerou()
+    }
+})
+document.addEventListener("keypress", function(s){
+    if(s.key === `s`){
+        let km = document.getElementById(`acelerar`)
+        km.value = 10
+        freio()
+    }
+})
+document.addEventListener("keypress", function(z){
+    if(z.key === `z`){
+       botaoligadesliga() 
+    }
+})
+var nick = window.prompt("Digite um nickname")
+var id = document.getElementById("nickname")
+id.innerHTML = nick
 

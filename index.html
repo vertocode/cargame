@@ -9,8 +9,10 @@
     <title>Car Game</title>
 </head>
 <body>
-    <div id="game">
-            <p><img id="carro" src="carro.png" alt="carro"></p>
+    <div id="game" class="jogo">
+            <p><img src="carro.png" alt="carro" id="carro"> </p>
+                <p id="nickname">Verto</p>
+           
     </div>
     
             <div id="controle">
@@ -18,7 +20,7 @@
                     <input type="button" value="Ligar/Desligar" onclick="botaoligadesliga()">
                 <p id="liga">Status do Carro: Desligado</p>
                 </div>
-                
+            
                 <div >
                     <input id="acelerar" type="number"> Km/h
                     <input type="button" value="Acelerar"onclick="acelerou()">
@@ -29,11 +31,19 @@
                     <img id="esquerda" src="esquerda.png" alt="esquerda" width="80px" onclick="esquerda()">
                     <img id="direita" src="right.png" alt="direita" width="80px" onclick="direita()">
                 </div>
+                
             </div>
-            <code>
-                <p id="vertocode"> &reg;vertocode</p>
-            </code>
             
+            <div id="controls">
+                <h2>controls:</h2>
+                <p>Z: Liga o carro</p>
+                <p>W: Acelera o carro</p>
+                <p>S: Freia o carro</p>
+                <p>A,D: Direciona o carro</p>
+                <code>
+                <p id="vertocode"> &reg;vertocode</p>
+                </code>
+            </div>
             
 
 
